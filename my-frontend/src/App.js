@@ -1,11 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register"; // If you created it
+import Dashboard from "./pages/Dashboard"; // ✅ Add this
 
 function App() {
   return (
- <div className="bg-blue-500 text-white p-3">
-      <h1 className="text-3xl font-bold">Tailwind is working!</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} /> {/* ✅ Added */}
+      </Routes>
+    </Router>
   );
 }
 
